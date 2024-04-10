@@ -1,0 +1,23 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    border-radius: 0.7em;
+    height: 550px;
+}
+.img {
+    padding: 20px;
+    height: 150px; 
+    border-radius: 50%;
+}
+.title {
+    color:black;
+    font-size: 20px;
+    margin-bottom:0px;
+}
+.description {
+    margin-top: 5px; 
+    margin-bottom: 0;
+}
