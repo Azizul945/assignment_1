@@ -12,57 +12,51 @@ class BankAccount{
             this.accoutNO      = accoutNO;
             this.ownerName     = ownerName;
             this.balance       = balance;
-         
-      }
+    }
       
-      displayAccountInfo(){
+  
+    depositAccountInfo(amount){
 
-        console.log(`Accont No:${this.accoutNO}`);
-        console.log(`Owner Name:${this.ownerName}`);
-        console.log(`Total Balance:${this.balance}`);
+      this.balance +=amount;
+        
     }
 
-      depositAccountInfo(amount){
+    withdrawnAccountInfo(amount){
 
-        this.balance +=amount;
-        console.log(`Deposit: ${amount}`);
-        console.log(`Total Current Balance: ${this.balance}`);
+      if(amount<=this.balance){
 
-             
+          this.balance -=amount;
+  
+      }else{
+          console.log(`Want to withdrawn: ${amount}`);
+          console.log(`Insufficent Balance: ${amount}`);
       }
 
-      withdrawnAccountInfo(amount){
-        if(amount<=this.balance){
+    }
 
-            this.balance -=amount;
-            console.log(`Total Withdrawn: ${amount}`);
-            console.log(`Total Current Balance: ${this.balance}`);
+    displayAccountInfo(){
 
+      console.log(`Accont No:${this.accoutNO}`);
+      console.log(`Owner Name:${this.ownerName}`);
+      console.log(`Total Balance:${this.balance}`);
 
-        }else{
-            console.log(`Want to withdrawn: ${amount}`);
-            console.log(`Insufficent Balance: ${amount}`);
-
-        }
-
-      }
-
-     
+    }
 }
 
-const obj=new BankAccount(101,"Azizul Haque",1000);
-const obj2=new BankAccount(102,"Anas Muhit",2000);
+  const obj=new BankAccount(101,"Azizul Haque",1000);
 
-console.log("Account Details");
-obj.displayAccountInfo();
-obj.depositAccountInfo(500);
-obj.withdrawnAccountInfo(1600);
+  console.log("Account Details");
+  obj.depositAccountInfo(500);
+  obj.withdrawnAccountInfo(160);
+  obj.displayAccountInfo();
 
-console.log("<br/>");
 
-console.log("Accouts Details");
 
-obj2.displayAccountInfo();
-obj2.depositAccountInfo(500);
-obj2.withdrawnAccountInfo(700);
+  console.log("\nAccount Details");
+  const obj2=new BankAccount(102,"Anas Muhit",2000);
+
+  obj2.depositAccountInfo(500);
+  obj2.withdrawnAccountInfo(700);
+  obj2.displayAccountInfo();
+
 
